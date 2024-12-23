@@ -1,0 +1,198 @@
+[
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.AdminController",
+    "Method": "CreateUser",
+    "RelativePath": "api/Admin/CreateUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.User.AdminCreateUser.AdminCreateUserCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.User.AdminCreateUser.AdminCreateUserCommandResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.AdminController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Admin/DeleteUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.User.AdminDeleteUser.AdminDeleteUserCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.User.AdminDeleteUser.AdminDeleteUserCommandResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.AdminController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/Admin/GetAllUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Queries.User.AdminGetAllUsers.GetAllUsersQueryResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.AdminController",
+    "Method": "GetUserCharts",
+    "RelativePath": "api/Admin/GetUserCharts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Queries.Chart.AdminUserChart.AdminUserChartsQueryResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.AdminController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/Admin/UpdateUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.User.AdminUpdateUser.AdminUpdateUserCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.User.AdminUpdateUser.AdminUpdateUserCommandResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.AuthController",
+    "Method": "LoginAdmin",
+    "RelativePath": "api/Auth/LoginAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.LoginAdmin.LoginAdminCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.LoginAdmin.LoginAdminCommandResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.AuthController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/Auth/RefreshToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.RefreshToken.RefreshTokenCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.RefreshToken.RefreshTokenCommandResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.UserController",
+    "Method": "CreateUser",
+    "RelativePath": "api/User/CreateUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.User.ScimCreateUser.ScimCreateUserCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.User.ScimCreateUser.ScimCreateUserCommandResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

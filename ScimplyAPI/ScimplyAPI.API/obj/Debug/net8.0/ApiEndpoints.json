@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "ScimplyAPI.API.Controllers.ScimController",
+    "Method": "CreateUser",
+    "RelativePath": "scim/v2/Users/CreateUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Core.DTOs.CreateUserRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

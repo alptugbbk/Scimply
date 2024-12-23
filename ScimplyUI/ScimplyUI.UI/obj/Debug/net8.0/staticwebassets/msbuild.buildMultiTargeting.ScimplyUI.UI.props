@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ScimplyUI.UI.props" />
+</Project>

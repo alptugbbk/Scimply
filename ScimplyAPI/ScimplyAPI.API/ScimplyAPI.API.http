@@ -1,0 +1,6 @@
+@ScimplyAPI.API_HostAddress = http://localhost:5254
+
+GET {{ScimplyAPI.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

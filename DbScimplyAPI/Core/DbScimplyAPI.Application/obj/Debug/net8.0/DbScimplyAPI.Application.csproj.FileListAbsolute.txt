@@ -1,0 +1,15 @@
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\bin\Debug\net8.0\DbScimplyAPI.Application.deps.json
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\bin\Debug\net8.0\DbScimplyAPI.Application.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\bin\Debug\net8.0\DbScimplyAPI.Application.pdb
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\bin\Debug\net8.0\DbScimplyAPI.Domain.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\bin\Debug\net8.0\DbScimplyAPI.Domain.pdb
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimplyAPI.Application.csproj.AssemblyReference.cache
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimplyAPI.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimplyAPI.Application.AssemblyInfoInputs.cache
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimplyAPI.Application.AssemblyInfo.cs
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimplyAPI.Application.csproj.CoreCompileInputs.cache
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimpl.978326DA.Up2Date
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimplyAPI.Application.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\refint\DbScimplyAPI.Application.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimplyAPI.Application.pdb
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\ref\DbScimplyAPI.Application.dll

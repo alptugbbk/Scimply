@@ -1,0 +1,11 @@
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\bin\Debug\net8.0\DbScimplyAPI.Domain.deps.json
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\bin\Debug\net8.0\DbScimplyAPI.Domain.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\bin\Debug\net8.0\DbScimplyAPI.Domain.pdb
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\DbScimplyAPI.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\DbScimplyAPI.Domain.AssemblyInfoInputs.cache
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\DbScimplyAPI.Domain.AssemblyInfo.cs
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\DbScimplyAPI.Domain.csproj.CoreCompileInputs.cache
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\DbScimplyAPI.Domain.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\refint\DbScimplyAPI.Domain.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\DbScimplyAPI.Domain.pdb
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\ref\DbScimplyAPI.Domain.dll
