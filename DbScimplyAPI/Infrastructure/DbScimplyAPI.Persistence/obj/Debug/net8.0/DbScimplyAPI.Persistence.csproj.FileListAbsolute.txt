@@ -17,3 +17,4 @@ C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Persiste
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Persistence\obj\Debug\net8.0\DbScimplyAPI.Persistence.pdb
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Persistence\obj\Debug\net8.0\DbScimplyAPI.Persistence.genruntimeconfig.cache
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Persistence\obj\Debug\net8.0\ref\DbScimplyAPI.Persistence.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Persistence\obj\Debug\net8.0\DbScimplyAPI.Persistence.sourcelink.json

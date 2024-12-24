@@ -129,3 +129,4 @@ C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Presentation\DbScimplyAPI.API\bin\De
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Presentation\DbScimplyAPI.API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Presentation\DbScimplyAPI.API\bin\Debug\net8.0\DbScimplyAPI.Infrastructure.dll
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Presentation\DbScimplyAPI.API\bin\Debug\net8.0\DbScimplyAPI.Infrastructure.pdb
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Presentation\DbScimplyAPI.API\obj\Debug\net8.0\DbScimplyAPI.API.sourcelink.json

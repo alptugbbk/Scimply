@@ -15,3 +15,4 @@ C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Infrastr
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Infrastructure\bin\Debug\net8.0\DbScimplyAPI.Domain.pdb
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Infrastructure\obj\Debug\net8.0\DbScimplyAPI.Infrastructure.csproj.AssemblyReference.cache
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Infrastructure\obj\Debug\net8.0\DbScimpl.9E42078F.Up2Date
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Infrastructure\DbScimplyAPI.Infrastructure\obj\Debug\net8.0\DbScimplyAPI.Infrastructure.sourcelink.json

@@ -1,0 +1,16 @@
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\ScimplyAPI.API.exe
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\ScimplyAPI.API.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\ScimplyAPI.API.deps.json
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\ScimplyAPI.API.runtimeconfig.json
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\ScimplyAPI.API.pdb
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\Core.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\Logic.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\Logic.pdb
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Release\net8.0\PubTmp\Out\Core.pdb

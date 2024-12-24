@@ -1,6 +1,7 @@
 ﻿using Core.Abstractions.Cryptographies;
 using Core.Abstractions.Services;
 using Core.DTOs;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -11,12 +12,15 @@ namespace Logic.Concretes.Services
     {
         private readonly HttpClient _httpClient;
         private readonly IAESEncryption _aesEncryption;
+		private readonly IConfiguration _configuration;
 
 
-		public ScimService(HttpClient httpClient, IAESEncryption aesEncryption)
+
+		public ScimService(HttpClient httpClient, IAESEncryption aesEncryption, IConfiguration configuration)
 		{
 			_httpClient = httpClient;
 			_aesEncryption = aesEncryption;
+			_configuration = configuration;
 		}
 
 
@@ -24,7 +28,9 @@ namespace Logic.Concretes.Services
 		public async Task<CreateUserResponseDTO> CreateUserAsync(CreateUserRequestDTO request)
         {
 
-            var databaseApiUrl = "https://localhost:7109/api/user/createuser";
+			var baseUrl = _configuration["SubmitUrl:DbScimplyAPI"];
+
+            var databaseApiUrl = $"{baseUrl}/api/user/createuser";
 
             var encryptCreateUserRequestDto = new CreateUserRequestDTO
             {

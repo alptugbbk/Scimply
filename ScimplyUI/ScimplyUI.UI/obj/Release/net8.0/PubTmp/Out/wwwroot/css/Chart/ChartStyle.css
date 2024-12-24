@@ -1,0 +1,48 @@
+﻿.pie-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pie-container {
+    width: 50%;
+    max-width: 600px;
+    height: 120%;
+    padding: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 80px;
+}
+
+.info-card {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: auto auto;
+}
+
+    .info-card h3 {
+        margin: 0 0 10px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .info-card p {
+        font-size: 15px;
+        font-weight: bold;
+        color: #777;
+    }

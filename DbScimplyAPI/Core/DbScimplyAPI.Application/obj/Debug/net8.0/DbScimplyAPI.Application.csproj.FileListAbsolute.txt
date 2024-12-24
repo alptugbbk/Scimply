@@ -13,3 +13,4 @@ C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\De
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\refint\DbScimplyAPI.Application.dll
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimplyAPI.Application.pdb
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\ref\DbScimplyAPI.Application.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Application\obj\Debug\net8.0\DbScimplyAPI.Application.sourcelink.json

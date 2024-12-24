@@ -35,3 +35,6 @@ C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Debug\net8.0\ref\Sc
 C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\bin\Debug\net8.0\Logic.dll
 C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\bin\Debug\net8.0\Logic.pdb
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\ScimplyAPI.API\obj\Debug\net8.0\ScimplyAPI.API.sourcelink.json

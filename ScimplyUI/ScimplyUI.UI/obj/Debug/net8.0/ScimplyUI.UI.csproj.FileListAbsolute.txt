@@ -29,3 +29,4 @@ C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Debug\net8.0\ref\Scimp
 C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Debug\net8.0\ScimplyUI.UI.csproj.AssemblyReference.cache
 C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Debug\net8.0\ScimplyU.1D773439.Up2Date
+C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Debug\net8.0\ScimplyUI.UI.sourcelink.json

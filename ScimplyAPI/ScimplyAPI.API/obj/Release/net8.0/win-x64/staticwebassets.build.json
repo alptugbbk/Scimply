@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "XYWdJcYckZE2eE5EmlJ/b3JgKsybPb1aQgtol4iLuLg=",
+  "Source": "ScimplyAPI.API",
+  "BasePath": "_content/ScimplyAPI.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,91 @@
+﻿
+.top-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 50px 30px 70px;
+    width: 90%;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+
+.user-image-circle {
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+
+    .user-image-circle:hover {
+        height: 38px;
+        width: 38px;
+    }
+
+
+.top-search .top-search-input {
+    max-width: 500px;
+    padding: 8px 140px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    color: #333;
+    font-size: 13px;
+    outline: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+    .top-search .top-search-input::placeholder {
+        color: #aaa;
+        font-size: 13px;
+    }
+
+    .top-search .top-search-input:focus {
+        border-color: #071637;
+        background-color: #fff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+        outline: none;
+    }
+
+    .top-search .top-search-input:hover {
+        border-color: #071637;
+        box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+    }
+
+/*logo*/
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+    .logo h3 {
+        font-size: 22px;
+    }
+
+.logo-circle {
+    display: flex;
+    flex-direction: column;
+    margin-right: 6px;
+    margin-bottom: 7px;
+}
+
+.logo .circle {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.logo .logo-circle .circle-1 {
+    background-color: red;
+    margin-left: 10px;
+}
+
+.logo .logo-circle .circle-2 {
+    background-color: black;
+}

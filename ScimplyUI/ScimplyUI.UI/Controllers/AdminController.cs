@@ -13,11 +13,13 @@ namespace ScimplyUI.UI.Controllers
 	{
 
 		private readonly HttpClient _httpClient;
+		private readonly IConfiguration _configuration;
 
 
-		public AdminController(HttpClient httpClient)
+		public AdminController(HttpClient httpClient, IConfiguration configuration)
 		{
 			_httpClient = httpClient;
+			_configuration = configuration;
 		}
 
 
@@ -35,7 +37,9 @@ namespace ScimplyUI.UI.Controllers
 
 			var accessToken = HttpContext.Request.Cookies["AccessToken"];
 
-			var apiUrl = "https://localhost:7109/api/Admin/GetAllUsers";
+			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+
+			var apiUrl = $"{baseUrl}/api/Admin/GetAllUsers";
 
 			if (accessToken != null)
 			{
@@ -83,7 +87,9 @@ namespace ScimplyUI.UI.Controllers
 				CreateUserRequestDTO = createUserRequestDTO,
 			};
 
-			var apiUrl = "https://localhost:7109/api/Admin/CreateUser";
+			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+
+			var apiUrl = $"{baseUrl}/api/Admin/CreateUser";
 
 			var convert = JsonConvert.SerializeObject(newModel);
 
@@ -126,7 +132,9 @@ namespace ScimplyUI.UI.Controllers
 				UserId = id,
 			};
 
-			var apiUrl = "https://localhost:7109/api/Admin/DeleteUser";
+			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+
+			var apiUrl = $"{baseUrl}/api/Admin/DeleteUser";
 
 			var convert = JsonConvert.SerializeObject(deleteUserRequestDto);
 
@@ -181,7 +189,9 @@ namespace ScimplyUI.UI.Controllers
 				UpdateUserRequestDTO = updateUserRequestDTO,
 			};
 
-			var apiUrl = "https://localhost:7109/api/Admin/UpdateUser";
+			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+
+			var apiUrl = $"{baseUrl}/api/Admin/UpdateUser";
 
 			var convert = JsonConvert.SerializeObject(newModel);
 

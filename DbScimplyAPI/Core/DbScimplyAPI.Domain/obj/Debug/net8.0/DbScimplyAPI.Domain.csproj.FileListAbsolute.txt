@@ -9,3 +9,4 @@ C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\n
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\refint\DbScimplyAPI.Domain.dll
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\DbScimplyAPI.Domain.pdb
 C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\ref\DbScimplyAPI.Domain.dll
+C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Core\DbScimplyAPI.Domain\obj\Debug\net8.0\DbScimplyAPI.Domain.sourcelink.json

@@ -10,10 +10,12 @@ namespace ScimplyUI.UI.Controllers
 	{
 
 		private readonly HttpClient _httpClient;
+		private readonly IConfiguration _configuration;
 
-		public AuthController(HttpClient httpClient)
+		public AuthController(HttpClient httpClient, IConfiguration configuration)
 		{
 			_httpClient = httpClient;
+			_configuration = configuration;
 		}
 
 
@@ -28,8 +30,10 @@ namespace ScimplyUI.UI.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Login([FromBody] AdminLoginViewModel adminLoginViewModel)
 		{
-			var apiUrl = "https://localhost:7109/api/auth/loginadmin";
 
+			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+
+			var apiUrl = $"{baseUrl}/api/auth/loginadmin";
 
 			var newModel = new
 			{
@@ -57,7 +61,7 @@ namespace ScimplyUI.UI.Controllers
 							HttpContext.Response.Cookies.Append("AccessToken", successResponse.AccessToken, new CookieOptions
 							{
 								HttpOnly = true,
-								Secure = true, 
+								Secure = true,
 								SameSite = SameSiteMode.Strict,
 								Expires = DateTime.UtcNow.AddMinutes(45)
 							});
@@ -70,7 +74,7 @@ namespace ScimplyUI.UI.Controllers
 								HttpOnly = true,
 								Secure = true,
 								SameSite = SameSiteMode.Strict,
-								Expires = DateTime.UtcNow.AddMinutes(60) 
+								Expires = DateTime.UtcNow.AddMinutes(60)
 							});
 						}
 
@@ -81,7 +85,7 @@ namespace ScimplyUI.UI.Controllers
 						return Json(new { message = successResponse.Message, status = successResponse.IsStatus });
 					}
 
-				}	
+				}
 
 			}
 
@@ -90,49 +94,51 @@ namespace ScimplyUI.UI.Controllers
 		}
 
 
-			[HttpPost]
-			public async Task<IActionResult> RefreshToken()
-			{
+
+		[HttpPost]
+		public async Task<IActionResult> RefreshToken()
+		{
 			var refreshToken = HttpContext.Request.Cookies["RefreshToken"];
 
 			if (string.IsNullOrEmpty(refreshToken))
+			{
+				return null;
+			}
+			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+
+			var apiUrl = $"{baseUrl}/api/auth/refreshtoken";
+
+			var convert = JsonConvert.SerializeObject(new { RefreshToken = refreshToken });
+
+			var content = new StringContent(convert, Encoding.UTF8, "application/json");
+
+			var response = await _httpClient.PostAsync(apiUrl, content);
+
+			var strResponse = await response.Content.ReadAsStringAsync();
+
+			if (response.IsSuccessStatusCode)
+			{
+
+				var successResponse = JsonConvert.DeserializeObject<LoginResponseDTO>(strResponse);
+
+				Response.Cookies.Append("AccessToken", successResponse.AccessToken, new CookieOptions
 				{
-					return null;
-				}
+					HttpOnly = true,
+					Secure = true,
+					SameSite = SameSiteMode.Strict,
+					Expires = DateTime.UtcNow.AddMinutes(60)
+				});
 
-				var apiUrl = "https://localhost:7109/api/auth/refreshtoken";
-
-				var convert = JsonConvert.SerializeObject(new { RefreshToken = refreshToken });
-
-				var content = new StringContent(convert, Encoding.UTF8, "application/json");
-
-				var response = await _httpClient.PostAsync(apiUrl, content);
-
-				var strResponse = await response.Content.ReadAsStringAsync();
-
-				if (response.IsSuccessStatusCode)
-				{
-
-					var successResponse = JsonConvert.DeserializeObject<LoginResponseDTO>(strResponse);
-
-					Response.Cookies.Append("AccessToken", successResponse.AccessToken, new CookieOptions
-					{
-						HttpOnly = true,
-						Secure = true,
-						SameSite = SameSiteMode.Strict,
-						Expires = DateTime.UtcNow.AddMinutes(60)
-					});
-
-					return Json(new { message = successResponse.Message });
-
-				}
-
-				var errorResponse = JsonConvert.DeserializeObject<LoginResponseDTO>(strResponse);
-
-				return Json(new { message = errorResponse.Message });
+				return Json(new { message = successResponse.Message });
 
 			}
-		
+
+			var errorResponse = JsonConvert.DeserializeObject<LoginResponseDTO>(strResponse);
+
+			return Json(new { message = errorResponse.Message });
+
+		}
+
 
 	}
 }

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\CdCenter\csProjects\Scimply\DbScimplyAPI\Presentation\DbScimplyAPI.API\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2024-12-24T08:58:30.8212080Z||;True|2024-12-24T11:00:22.7920690+03:00||;True|2024-12-23T16:19:25.9714366+03:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

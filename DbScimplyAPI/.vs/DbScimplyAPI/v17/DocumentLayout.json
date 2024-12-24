@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\CdCenter\\csProjects\\Scimply\\DbScimplyAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DAAB6F45-DE56-4599-8CEF-980F793A564F}|Presentation\\DbScimplyAPI.API\\DbScimplyAPI.API.csproj|c:\\cdcenter\\csprojects\\scimply\\dbscimplyapi\\presentation\\dbscimplyapi.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DAAB6F45-DE56-4599-8CEF-980F793A564F}|Presentation\\DbScimplyAPI.API\\DbScimplyAPI.API.csproj|solutionrelative:presentation\\dbscimplyapi.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +35,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\CdCenter\\csProjects\\Scimply\\DbScimplyAPI\\Presentation\\DbScimplyAPI.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Presentation\\DbScimplyAPI.API\\appsettings.json",
+              "ToolTip": "C:\\CdCenter\\csProjects\\Scimply\\DbScimplyAPI\\Presentation\\DbScimplyAPI.API\\appsettings.json",
+              "RelativeToolTip": "Presentation\\DbScimplyAPI.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-24T09:10:41.65Z",
+              "EditorCaption": ""
             }
           ]
         }

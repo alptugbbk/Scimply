@@ -12,13 +12,15 @@ namespace ScimplyUI.UI.Controllers
     {
 
         private readonly HttpClient _httpClient;
+        private readonly IConfiguration _configuration;
 
-        public ChartController(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
+		public ChartController(HttpClient httpClient, IConfiguration configuration)
+		{
+			_httpClient = httpClient;
+			_configuration = configuration;
+		}
 
-        public IActionResult Charts()
+		public IActionResult Charts()
         {
             return View();
         }
@@ -30,7 +32,9 @@ namespace ScimplyUI.UI.Controllers
         {
 			var accessToken = HttpContext.Request.Cookies["AccessToken"];
 
-			var apiUrl = "https://localhost:7109/api/Admin/GetUserCharts";
+			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+
+			var apiUrl = $"{baseUrl}/api/Admin/GetUserCharts";
 
 			_httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
 

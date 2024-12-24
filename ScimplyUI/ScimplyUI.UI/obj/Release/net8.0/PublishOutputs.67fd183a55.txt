@@ -1,0 +1,8 @@
+C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Release\net8.0\PubTmp\Out\ScimplyUI.UI.exe
+C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Release\net8.0\PubTmp\Out\ScimplyUI.UI.dll
+C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Release\net8.0\PubTmp\Out\ScimplyUI.UI.deps.json
+C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Release\net8.0\PubTmp\Out\ScimplyUI.UI.runtimeconfig.json
+C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Release\net8.0\PubTmp\Out\ScimplyUI.UI.pdb
+C:\CdCenter\csProjects\Scimply\ScimplyUI\ScimplyUI.UI\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll

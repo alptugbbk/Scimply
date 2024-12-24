@@ -13,3 +13,4 @@ C:\CdCenter\csProjects\Scimply\ScimplyAPI\Logic\obj\Debug\net8.0\Logic.dll
 C:\CdCenter\csProjects\Scimply\ScimplyAPI\Logic\obj\Debug\net8.0\refint\Logic.dll
 C:\CdCenter\csProjects\Scimply\ScimplyAPI\Logic\obj\Debug\net8.0\Logic.pdb
 C:\CdCenter\csProjects\Scimply\ScimplyAPI\Logic\obj\Debug\net8.0\ref\Logic.dll
+C:\CdCenter\csProjects\Scimply\ScimplyAPI\Logic\obj\Debug\net8.0\Logic.sourcelink.json
