@@ -27,8 +27,9 @@ namespace DbScimplyAPI.Persistence
             services.AddScoped<ISchemaRepository, SchemaRepository>();
             services.AddScoped<IAESEncryption, AESEncryption>();
             services.AddScoped<IPasswordGenerator, PasswordGenerator>();
-            services.AddScoped<IAuthService,AuthService>();
             services.AddScoped<IMailSenderService, MailSenderService>();
+            services.AddScoped<ILoggerService, LoggerService>();
+            services.AddScoped<ILoggerRepository, LoggerRepository>();
         }
 
 

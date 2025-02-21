@@ -7,8 +7,8 @@
     const id = row.find('td').eq(1).text().trim();
     const resourceType = row.find('td').eq(2).text().trim();
     const userName = row.find('.username-column').data('fulltext');
-    const version = row.find('td').eq(7).text().trim();
-    const location = row.find('td').eq(8).data('fulltext');
+    const version = row.find('td').eq(6).text().trim();
+    const location = row.find('td').eq(7).data('fulltext');
 
     $('#inputStatusDropdown').val(status ? "true" : "false");
     $('#updateId').val(id);
@@ -32,7 +32,7 @@
             };
             if (confirm("Are you sure you want to update the user ? ")) {
                 $.ajax({
-                    url: '/Admin/UpdateUser',
+                    url: '/Home/UpdateUser',
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify(updatedUser),

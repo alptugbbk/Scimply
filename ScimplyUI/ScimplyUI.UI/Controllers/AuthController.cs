@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using ScimplyUI.UI.DTOs.Auth;
 using ScimplyUI.UI.Models.Auth;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace ScimplyUI.UI.Controllers
@@ -12,12 +13,12 @@ namespace ScimplyUI.UI.Controllers
 		private readonly HttpClient _httpClient;
 		private readonly IConfiguration _configuration;
 
+
 		public AuthController(HttpClient httpClient, IConfiguration configuration)
 		{
 			_httpClient = httpClient;
 			_configuration = configuration;
 		}
-
 
 
 		public IActionResult Login()
@@ -26,6 +27,22 @@ namespace ScimplyUI.UI.Controllers
 		}
 
 
+		public IActionResult ForgotPassword()
+		{
+			return View();
+		}
+
+
+		public IActionResult ResetPassword(string userId)
+		{
+			if (string.IsNullOrEmpty(userId))
+			{
+				return RedirectToAction("ForgotPassword", "Auth");
+			}
+
+			return View(new ForgotPasswordViewModel { UserId = userId });
+		}
+
 
 		[HttpPost]
 		public async Task<IActionResult> Login([FromBody] AdminLoginViewModel adminLoginViewModel)
@@ -33,7 +50,7 @@ namespace ScimplyUI.UI.Controllers
 
 			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
 
-			var apiUrl = $"{baseUrl}/api/auth/loginadmin";
+			var apiUrl = $"{baseUrl}/api/auth/adminlogin";
 
 			var newModel = new
 			{
@@ -46,45 +63,39 @@ namespace ScimplyUI.UI.Controllers
 
 			var response = await _httpClient.PostAsync(apiUrl, content);
 
-			var strResponse = await response.Content.ReadAsStringAsync();
+            var strResponse = await response.Content.ReadAsStringAsync();
 
-			if (response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
 			{
-				var successResponse = JsonConvert.DeserializeObject<LoginResponseDTO>(strResponse);
 
-				if (successResponse.IsStatus == true)
+				var successResponse = JsonConvert.DeserializeObject<AdminLoginResponseDTO>(strResponse);
+
+				if (successResponse.IsTwoFactor == true)
 				{
-					if (successResponse.IsStatus == true)
-					{
-						if (!string.IsNullOrEmpty(successResponse.AccessToken))
-						{
-							HttpContext.Response.Cookies.Append("AccessToken", successResponse.AccessToken, new CookieOptions
-							{
-								HttpOnly = true,
-								Secure = true,
-								SameSite = SameSiteMode.Strict,
-								Expires = DateTime.UtcNow.AddMinutes(45)
-							});
-						}
+					return Json(new { message = successResponse.Message, isTwoFactor = successResponse.IsTwoFactor, id = successResponse.Id });
+				}
 
-						if (!string.IsNullOrEmpty(successResponse.RefreshToken))
-						{
-							HttpContext.Response.Cookies.Append("RefreshToken", successResponse.RefreshToken, new CookieOptions
-							{
-								HttpOnly = true,
-								Secure = true,
-								SameSite = SameSiteMode.Strict,
-								Expires = DateTime.UtcNow.AddMinutes(60)
-							});
-						}
+				if (successResponse.Status == 200)
+				{
 
-						return Json(new { message = successResponse.Message, status = successResponse.IsStatus });
-					}
-					else
+					if (adminLoginViewModel.RememberMe)
 					{
-						return Json(new { message = successResponse.Message, status = successResponse.IsStatus });
+						var cookie = new CookieOptions
+						{
+							Expires = DateTimeOffset.UtcNow.AddDays(10),
+							HttpOnly = true,
+							Secure = true
+						};
+						Response.Cookies.Append("UserId", adminLoginViewModel.UserName, cookie);
 					}
 
+					HttpContext.Session.SetString("UserId", successResponse.Id.ToString());
+                    return Json(new { message = successResponse.Message, status = successResponse.Status });
+
+				}
+				else
+				{
+					return Json(new { message = successResponse.Message, status = successResponse.Status });
 				}
 
 			}
@@ -94,21 +105,19 @@ namespace ScimplyUI.UI.Controllers
 		}
 
 
-
 		[HttpPost]
-		public async Task<IActionResult> RefreshToken()
+		public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordViewModel forgotPasswordViewModel)
 		{
-			var refreshToken = HttpContext.Request.Cookies["RefreshToken"];
+            var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
 
-			if (string.IsNullOrEmpty(refreshToken))
+            var apiUrl = $"{baseUrl}/api/auth/adminforgotpassword";
+
+			var request = new ForgotPasswordRequestDTO
 			{
-				return null;
-			}
-			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+				Email = forgotPasswordViewModel.Email,
+			};
 
-			var apiUrl = $"{baseUrl}/api/auth/refreshtoken";
-
-			var convert = JsonConvert.SerializeObject(new { RefreshToken = refreshToken });
+			var convert = JsonConvert.SerializeObject(request);
 
 			var content = new StringContent(convert, Encoding.UTF8, "application/json");
 
@@ -118,24 +127,124 @@ namespace ScimplyUI.UI.Controllers
 
 			if (response.IsSuccessStatusCode)
 			{
+				var successResponse = JsonConvert.DeserializeObject<AdminForgotPasswordQueryResponse>(strResponse);
 
-				var successResponse = JsonConvert.DeserializeObject<LoginResponseDTO>(strResponse);
+                if (successResponse.Status == 200)
+                {
+                    return Json(new { message = successResponse.Message, status = successResponse.Status });
+                }
+                else
+                {
+                    return Json(new { message = successResponse.Message, status = successResponse.Status });
+                }
+            }
 
-				Response.Cookies.Append("AccessToken", successResponse.AccessToken, new CookieOptions
+			return View();
+        }
+
+
+		[HttpPost]
+		public async Task<IActionResult> ResetPassword([FromBody] ForgotPasswordViewModel forgotPasswordViewModel)
+		{
+            var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+
+            var apiUrl = $"{baseUrl}/api/auth/adminresetpassword";
+
+			var resetPasswordRequestDto = new ResetPasswordRequestDTO
+			{
+				UserId = forgotPasswordViewModel.UserId,
+				NewPassword = forgotPasswordViewModel.NewPassword
+			};
+
+			var newModel = new
+			{
+                ResetPasswordRequestDTO = resetPasswordRequestDto
+            };
+
+            var convert = JsonConvert.SerializeObject(newModel);
+
+            var content = new StringContent(convert, Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PostAsync(apiUrl, content);
+
+            var strResponse = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var successResponse = JsonConvert.DeserializeObject<AdminForgotPasswordQueryResponse>(strResponse);
+
+                if (successResponse.Status == 200)
+                {
+                    return Json(new { message = successResponse.Message, status = successResponse.Status });
+                }
+                else
+                {
+                    return Json(new { message = successResponse.Message, status = successResponse.Status });
+                }
+            }
+
+            return View();
+        }
+
+
+		[HttpPost]
+		public async Task<IActionResult> TwoFactor([FromBody] AdminLoginViewModel adminLoginViewModel)
+		{
+
+			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+
+			var apiUrl = $"{baseUrl}/api/auth/twofactor";
+
+			var twoFactorRequestDto = new TwoFactorRequestDTO
+			{
+				Code = adminLoginViewModel.Code,
+				Id = adminLoginViewModel.Id
+			};
+
+			var request = new
+			{
+				TwoFactorRequestDTO = twoFactorRequestDto
+			};
+
+			var convert = JsonConvert.SerializeObject(request);
+
+			var content = new StringContent(convert, Encoding.UTF8, "application/json");
+
+			var response = await _httpClient.PostAsync(apiUrl, content);
+
+			var strResponse = await response.Content.ReadAsStringAsync();
+
+			if (response.IsSuccessStatusCode)
+			{
+				var successResponse = JsonConvert.DeserializeObject<AdminLoginResponseDTO>(strResponse);
+
+				if (successResponse.Status == 200)
 				{
-					HttpOnly = true,
-					Secure = true,
-					SameSite = SameSiteMode.Strict,
-					Expires = DateTime.UtcNow.AddMinutes(60)
-				});
-
-				return Json(new { message = successResponse.Message });
+					HttpContext.Session.SetString("UserId", request.TwoFactorRequestDTO.Id);
+					return Json(new { message = successResponse.Message, status = successResponse.Status });
+				}
+				else
+				{
+					return Json(new { message = successResponse.Message, status = successResponse.Status });
+				}
 
 			}
 
-			var errorResponse = JsonConvert.DeserializeObject<LoginResponseDTO>(strResponse);
+			return View();
+		}
 
-			return Json(new { message = errorResponse.Message });
+
+		[HttpPost]
+		public async Task<IActionResult> Logout()
+		{
+			HttpContext.Session.Clear();
+			
+			foreach(var cookie in Request.Cookies.Keys)
+			{
+				Response.Cookies.Delete(cookie);
+			}
+
+			return Json(new { redirectUrl = Url.Action("Login", "Auth") });
 
 		}
 

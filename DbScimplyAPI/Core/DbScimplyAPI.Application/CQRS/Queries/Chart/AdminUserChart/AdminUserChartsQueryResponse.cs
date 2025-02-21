@@ -10,6 +10,7 @@ namespace DbScimplyAPI.Application.CQRS.Queries.Chart.AdminUserChart
     public class AdminUserChartsQueryResponse
     {
         public List<ChartLocationCountDTO> ChartLocationCountResponseDTO { get; set; }
+        public List<ChartDateCountDTO> ChartMostCommonDateResponseDTO { get; set; }
         public int TotalUsers { get; set; }
         public int ActiveUsers { get; set; }
         public int InactiveUsers { get; set; }

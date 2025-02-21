@@ -15,5 +15,7 @@ namespace DbScimplyAPI.Application.Abstractions.Services
 
 		Task SendResetPasswordLinkToUserAsync(string email, string link);
 
+		Task SendTwoFactorCodeToUserAsync(string email, string code);
+
 	}
 }

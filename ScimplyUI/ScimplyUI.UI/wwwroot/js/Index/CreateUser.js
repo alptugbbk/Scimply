@@ -27,7 +27,7 @@ $(document).ready(function () {
 		if (validateForm(user)) {
 
 			$.ajax({
-				url: '/Admin/CreateUser',
+				url: '/Home/CreateUser',
 				type: 'POST',
 				contentType: 'application/json',
 				data: JSON.stringify(user),

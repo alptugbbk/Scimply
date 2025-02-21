@@ -1,4 +1,5 @@
 ﻿using DbScimplyAPI.Domain.Entities.Admin;
+using DbScimplyAPI.Domain.Entities.Log;
 using DbScimplyAPI.Domain.Entities.Role;
 using DbScimplyAPI.Domain.Entities.User;
 using DbScimplyAPI.Persistence.Configurations;
@@ -20,6 +21,7 @@ namespace DbScimplyAPI.Persistence.Context
         public DbSet<Schema> Schemas { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Logs> Logs { get; set; }
 
 
 
@@ -31,6 +33,7 @@ namespace DbScimplyAPI.Persistence.Context
             modelBuilder.ApplyConfiguration(new SchemaConfiguration());
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new AdminConfiguration());
+            modelBuilder.ApplyConfiguration(new LoggerConfiguration());
         }
 
 

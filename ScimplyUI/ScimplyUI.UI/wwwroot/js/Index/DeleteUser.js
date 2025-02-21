@@ -11,7 +11,7 @@ $(document).on('click', '.btn-delete', function () {
     }
 
     $.ajax({
-        url: '/Admin/DeleteUser',
+        url: '/Home/DeleteUser',
         type: 'POST',
         data: { id: userId },
         success: function (response) {

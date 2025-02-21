@@ -94,7 +94,7 @@ namespace DbScimplyAPI.Application.CQRS.Commands.User.ScimCreateUser
                     Status = true,
                     UserName = request.CreateUserRequestDTO.UserName,
                     Id = userId,
-                    Created =request.CreateUserRequestDTO.Meta.Created > DateTime.UtcNow ? DateTime.UtcNow : request.CreateUserRequestDTO.Meta.Created,
+                    Created =/*request.CreateUserRequestDTO.Meta.Created > DateTime.UtcNow ? DateTime.UtcNow : */request.CreateUserRequestDTO.Meta.Created,
                     LastModified = DateTime.UtcNow,
                     ResourceType = request.CreateUserRequestDTO.Meta.ResourceType,
                     Version = request.CreateUserRequestDTO.Meta.Version ?? $"W/\"{Convert.ToBase64String(Encoding.UTF8.GetBytes(newVersion))}\"",

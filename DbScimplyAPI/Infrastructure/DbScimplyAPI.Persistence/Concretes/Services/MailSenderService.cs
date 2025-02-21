@@ -50,12 +50,18 @@ namespace DbScimplyAPI.Persistence.Concretes.Services
 		public async Task SendResetPasswordLinkToUserAsync(string email, string link)
 		{
 			string subject = "Scimply forgot password";
-			string body = $"To reset your password, click the following link:: {link}";
+			string body = $"To reset your password, click the following link: {link}";
 			await SendMailAsync(email, subject, body);
 		}
 
 
 
+		public async Task SendTwoFactorCodeToUserAsync(string email, string code)
+		{
+			string subject = "Your Two-Factor Authentication Code";
+			string body = $"Your two-factor authentication code is: {code}";
+			await SendMailAsync(email, subject, body);
+		}
 
 
 	}

@@ -27,6 +27,13 @@ namespace DbScimplyAPI.Persistence.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsTwoFactor")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
@@ -34,14 +41,11 @@ namespace DbScimplyAPI.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("RefreshToken")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("RefreshTokenEndDate")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<string>("RoleId")
                         .HasColumnType("text");
+
+                    b.Property<int>("TwoFactorCode")
+                        .HasColumnType("integer");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -52,6 +56,39 @@ namespace DbScimplyAPI.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Admins");
+                });
+
+            modelBuilder.Entity("DbScimplyAPI.Domain.Entities.Log.Logs", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Data")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Exception")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LogLevel")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TableName")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logs");
                 });
 
             modelBuilder.Entity("DbScimplyAPI.Domain.Entities.Role.Role", b =>
@@ -98,9 +135,6 @@ namespace DbScimplyAPI.Persistence.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Password")
-                        .HasColumnType("text");
-
-                    b.Property<string>("RefreshToken")
                         .HasColumnType("text");
 
                     b.Property<string>("ResourceType")

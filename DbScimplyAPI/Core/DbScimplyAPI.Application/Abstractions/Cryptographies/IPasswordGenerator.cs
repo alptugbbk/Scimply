@@ -14,6 +14,7 @@ namespace DbScimplyAPI.Application.Abstractions.Cryptographies
 
         string SHAEncrypt(string password, string id);
 
+        string GenerateTwoFactor();
 
     }
 }

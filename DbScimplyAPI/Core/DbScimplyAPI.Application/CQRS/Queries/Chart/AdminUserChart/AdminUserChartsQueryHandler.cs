@@ -35,6 +35,7 @@ namespace DbScimplyAPI.Application.CQRS.Queries.Chart.AdminUserChart
 
             var inactiveUsers = users.Count(x => !x.Status);
 
+            // location
             string GetDomain(string url)
             {
                 var match = Regex.Match(url, @"^(https?:\/\/[^\/]+)");
@@ -47,9 +48,18 @@ namespace DbScimplyAPI.Application.CQRS.Queries.Chart.AdminUserChart
                 Count = x.Count()
             }).OrderBy(x => x.Count).ToList();
 
+            // most common date
+            var userCountsByMonth = users.GroupBy(x => x.Created.ToString("yyyy-MM"))
+            .Select(x => new ChartDateCountDTO
+            {
+                Date = x.Key,
+                Count = x.Count()
+            }).OrderBy(x=> x.Date).ToList();
+
             return new AdminUserChartsQueryResponse
             {
                 ChartLocationCountResponseDTO = locationCounts,
+                ChartMostCommonDateResponseDTO = userCountsByMonth,
                 TotalUsers = totalUsers,
                 ActiveUsers = activeUsers,
                 InactiveUsers = inactiveUsers

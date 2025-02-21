@@ -13,12 +13,28 @@
       "PackagePath": "staticwebassets\\assets\\ic_search.png"
     },
     {
+      "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\assets\\ic_send_mail.png",
+      "PackagePath": "staticwebassets\\assets\\ic_send_mail.png"
+    },
+    {
       "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\assets\\testuser.png",
       "PackagePath": "staticwebassets\\assets\\testuser.png"
     },
     {
+      "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\css\\Auth\\ForgotPassword.css",
+      "PackagePath": "staticwebassets\\css\\Auth\\ForgotPassword.css"
+    },
+    {
       "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\css\\Auth\\LoginStyle.css",
       "PackagePath": "staticwebassets\\css\\Auth\\LoginStyle.css"
+    },
+    {
+      "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\css\\Auth\\ResetPassword.css",
+      "PackagePath": "staticwebassets\\css\\Auth\\ResetPassword.css"
+    },
+    {
+      "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\css\\Auth\\TwoFactorModal.css",
+      "PackagePath": "staticwebassets\\css\\Auth\\TwoFactorModal.css"
     },
     {
       "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\css\\Chart\\ChartStyle.css",
@@ -49,8 +65,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\js\\Auth\\ForgotPassword.js",
+      "PackagePath": "staticwebassets\\js\\Auth\\ForgotPassword.js"
+    },
+    {
       "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\js\\Auth\\LoginAdmin.js",
       "PackagePath": "staticwebassets\\js\\Auth\\LoginAdmin.js"
+    },
+    {
+      "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\js\\Auth\\ResetPassword.js",
+      "PackagePath": "staticwebassets\\js\\Auth\\ResetPassword.js"
     },
     {
       "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\js\\Chart\\GetUserCharts.js",
@@ -75,6 +99,10 @@
     {
       "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\js\\Index\\UpdateUser.js",
       "PackagePath": "staticwebassets\\js\\Index\\UpdateUser.js"
+    },
+    {
+      "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\js\\Shared\\Logout.js",
+      "PackagePath": "staticwebassets\\js\\Shared\\Logout.js"
     },
     {
       "Id": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\lib\\bootstrap\\LICENSE",

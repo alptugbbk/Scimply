@@ -119,21 +119,21 @@
   },
   {
     "ContainingType": "DbScimplyAPI.API.Controllers.AuthController",
-    "Method": "LoginAdmin",
-    "RelativePath": "api/Auth/LoginAdmin",
+    "Method": "AdminForgotPassword",
+    "RelativePath": "api/Auth/AdminForgotPassword",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.LoginAdmin.LoginAdminCommandRequest",
+        "Type": "DbScimplyAPI.Application.CQRS.Queries.Auth.AdminForgotPassword.AdminForgotPasswordQueryRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.LoginAdmin.LoginAdminCommandResponse",
+        "Type": "DbScimplyAPI.Application.CQRS.Queries.Auth.AdminForgotPassword.AdminForgotPasswordQueryResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -145,21 +145,73 @@
   },
   {
     "ContainingType": "DbScimplyAPI.API.Controllers.AuthController",
-    "Method": "RefreshToken",
-    "RelativePath": "api/Auth/RefreshToken",
+    "Method": "AdminLogin",
+    "RelativePath": "api/Auth/AdminLogin",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.RefreshToken.RefreshTokenCommandRequest",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.AdminLogin.AdminLoginCommandRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.RefreshToken.RefreshTokenCommandResponse",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.AdminLogin.AdminLoginCommandResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.AuthController",
+    "Method": "AdminResetPassword",
+    "RelativePath": "api/Auth/AdminResetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.AdminResetPassword.AdminResetPasswordCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.AdminResetPassword.AdminResetPasswordCommandResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DbScimplyAPI.API.Controllers.AuthController",
+    "Method": "TwoFactor",
+    "RelativePath": "api/Auth/TwoFactor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.TwoFactor.TwoFactorCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DbScimplyAPI.Application.CQRS.Commands.Auth.TwoFactor.TwoFactorCommandResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",

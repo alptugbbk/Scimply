@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{503122B1-EFDB-4E9C-B29F-DEEDB270AA98}|ScimplyUI.UI\\ScimplyUI.UI.csproj|c:\\cdcenter\\csprojects\\scimply\\scimplyui\\scimplyui.ui\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{503122B1-EFDB-4E9C-B29F-DEEDB270AA98}|ScimplyUI.UI\\ScimplyUI.UI.csproj|solutionrelative:scimplyui.ui\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{503122B1-EFDB-4E9C-B29F-DEEDB270AA98}|ScimplyUI.UI\\ScimplyUI.UI.csproj|c:\\cdcenter\\csprojects\\scimply\\scimplyui\\scimplyui.ui\\wwwroot\\js\\auth\\loginadmin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{503122B1-EFDB-4E9C-B29F-DEEDB270AA98}|ScimplyUI.UI\\ScimplyUI.UI.csproj|solutionrelative:scimplyui.ui\\wwwroot\\js\\auth\\loginadmin.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{503122B1-EFDB-4E9C-B29F-DEEDB270AA98}|ScimplyUI.UI\\ScimplyUI.UI.csproj|c:\\cdcenter\\csprojects\\scimply\\scimplyui\\scimplyui.ui\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{503122B1-EFDB-4E9C-B29F-DEEDB270AA98}|ScimplyUI.UI\\ScimplyUI.UI.csproj|solutionrelative:scimplyui.ui\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +43,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ScimplyUI.UI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ScimplyUI.UI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAowC8AAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T13:41:51.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginAdmin.js",
+              "DocumentMoniker": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\js\\Auth\\LoginAdmin.js",
+              "RelativeDocumentMoniker": "ScimplyUI.UI\\wwwroot\\js\\Auth\\LoginAdmin.js",
+              "ToolTip": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\wwwroot\\js\\Auth\\LoginAdmin.js",
+              "RelativeToolTip": "ScimplyUI.UI\\wwwroot\\js\\Auth\\LoginAdmin.js",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAYwHIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-01T13:35:52.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "ScimplyUI.UI\\Views\\Auth\\Login.cshtml",
+              "ToolTip": "C:\\CdCenter\\csProjects\\Scimply\\ScimplyUI\\ScimplyUI.UI\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "ScimplyUI.UI\\Views\\Auth\\Login.cshtml",
+              "ViewState": "AgIAABwAAAAAAAAAAAAIwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-01T13:37:39.075Z",
+              "EditorCaption": ""
             }
           ]
         }

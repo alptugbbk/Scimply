@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DbScimplyAPI.API.Controllers
 {
-	[Authorize]
+	
 	[Route("api/[controller]")]
     [ApiController]
     public class AdminController : Controller
@@ -24,8 +24,6 @@ namespace DbScimplyAPI.API.Controllers
         }
 
 
-
-
 		[HttpPost("CreateUser")]
 		public async Task<AdminCreateUserCommandResponse> CreateUser(AdminCreateUserCommandRequest request)
 		{
@@ -34,14 +32,12 @@ namespace DbScimplyAPI.API.Controllers
 		}
 
 
-        
 		[HttpGet("GetAllUsers")]
         public async Task<GetAllUsersQueryResponse> GetAllUsers()
         {
             var response = await _mediator.Send(new GetAllUsersQueryRequest());
             return response;
         }
-
 
 
         [HttpPost("DeleteUser")]
@@ -52,14 +48,12 @@ namespace DbScimplyAPI.API.Controllers
         }
 
 
-
         [HttpPost("UpdateUser")]
         public async Task<AdminUpdateUserCommandResponse> UpdateUser(AdminUpdateUserCommandRequest request)
         {
             var response = await _mediator.Send(request);
             return response;
         }
-
 
 
 		[HttpGet("GetUserCharts")]

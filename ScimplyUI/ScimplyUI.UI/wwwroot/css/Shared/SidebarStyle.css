@@ -1,15 +1,9 @@
 ﻿
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
 ::after,
 ::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
 }
 
 .wrapper {
@@ -32,7 +26,7 @@ body {
     min-width: 70px;
     z-index: 1000;
     transition: all .25s ease-in-out;
-    background-color: #101a2c;
+    background-color: #ececec;
     display: flex;
     flex-direction: column;
 }
@@ -42,37 +36,38 @@ body {
         min-width: 260px;
     }
 
-.sidebar-toggle-btn {
-    background-color: transparent;
-    cursor: pointer;
-    border: 0;
-    padding: 1rem 1.5rem;
-}
-
-    .sidebar-toggle-btn i {
-        font-size: 1.5rem;
-        color: #FFF;
+    #sidebar .sidebar-toggle-btn {
+        background-color: transparent;
+        cursor: pointer;
+        border: 0;
+        padding: 1rem 1.5rem;
     }
 
-.sidebar-logo {
-    margin: auto 0;
-}
+        #sidebar .sidebar-toggle-btn i {
+            font-size: 1.5rem;
+            color: black;
+        }
 
-    .sidebar-logo a {
-        color: #FFF;
-        font-size: 1.15rem;
-        font-weight: 600;
+    #sidebar .sidebar-logo {
+        margin: auto 0;
     }
 
-#sidebar:not(.expand) .sidebar-logo,
-#sidebar:not(.expand) a.sidebar-link span {
-    display: none;
-}
+        #sidebar .sidebar-logo a {
+            color: black;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
 
-#sidebar.expand .sidebar-logo,
-#sidebar.expand a.sidebar-link span {
-    animation: fadeIn .25s ease;
-}
+    #sidebar:not(.expand) .sidebar-logo,
+    #sidebar:not(.expand) a.sidebar-link span {
+        display: none;
+    }
+
+    #sidebar.expand .sidebar-logo,
+    #sidebar.expand a.sidebar-link span {
+        animation: fadeIn .25s ease;
+    }
 
 @keyframes fadeIn {
     0% {
@@ -89,9 +84,9 @@ body {
     flex: 1 1 auto;
 }
 
-a.sidebar-link {
+#sidebar a.sidebar-link {
     padding: .625rem 1.625rem;
-    color: #FFF;
+    color: black;
     display: block;
     font-size: 0.9rem;
     white-space: nowrap;
@@ -105,9 +100,9 @@ a.sidebar-link {
     margin-right: .75rem;
 }
 
-a.sidebar-link:hover {
-    background-color: rgba(255, 255, 255, .075);
-    border-left: 3px solid #3b7ddd;
+#sidebar a.sidebar-link:hover {
+    background-color: #f8f9fa;
+    border-left: 3px solid #000000;
 }
 
 .sidebar-item {
@@ -119,7 +114,7 @@ a.sidebar-link:hover {
     position: absolute;
     top: 0;
     left: 70px;
-    background-color: #0e2238;
+    background-color: #ececec;
     padding: 0;
     min-width: 15rem;
     display: none;

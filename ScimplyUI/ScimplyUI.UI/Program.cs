@@ -7,27 +7,12 @@ builder.Services.AddHttpClient();
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.Configure<CookiePolicyOptions>(options =>
-{
-	options.CheckConsentNeeded = context => false;
-	options.MinimumSameSitePolicy = SameSiteMode.Strict;
-	options.HttpOnly = HttpOnlyPolicy.Always;
-	options.Secure = CookieSecurePolicy.Always;
-});
-
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-	.AddCookie(options =>
-	{
-		options.Cookie.HttpOnly = true;
-		options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-		options.Cookie.SameSite = SameSiteMode.Strict;
-	});
-
 builder.Services.AddSession(options =>
 {
-	options.IdleTimeout = TimeSpan.FromMinutes(30);  // Oturum süresi
-	options.Cookie.HttpOnly = true;
-	options.Cookie.IsEssential = true; // Güvenli veri saklama
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.Cookie.Name = "Scimply";
 });
 
 var app = builder.Build();
@@ -44,9 +29,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-//app.UseSession();
-
-app.UseAuthorization();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

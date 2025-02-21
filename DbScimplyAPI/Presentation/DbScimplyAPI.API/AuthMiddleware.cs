@@ -1,5 +1,5 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
+﻿using DbScimplyAPI.Application.Abstractions.Services;
+using DbScimplyAPI.Application.Repositories;
 
 namespace DbScimplyAPI.API
 {
@@ -8,73 +8,55 @@ namespace DbScimplyAPI.API
 
         private readonly RequestDelegate _next;
 
-		public AuthMiddleware(RequestDelegate next)
-		{
-			_next = next;
-		}
+
+        public AuthMiddleware(RequestDelegate next)
+        {
+            _next = next;
+
+        }
 
 
+        public async Task InvokeAsync(HttpContext context, IServiceScopeFactory scopeFactory)
+        {
 
-		public async Task InvokeAsync(HttpContext context)
-		{
+            try
+            {
 
-			try
-			{
+                if (context.Request.Path.StartsWithSegments("/api/auth"))
+                {
+                    await _next(context);
+                    return;
+                }
 
-				if (context.Request.Path.StartsWithSegments("/api/auht"))
-				{
-					await _next(context);
-					return;
-				}
+                using (var scope = scopeFactory.CreateScope())
+                {
 
-				var accessToken = context.Session.GetString("AccessToken");
+                    var adminRepository = scope.ServiceProvider.GetRequiredService<IAdminRepository>();
 
-				if (string.IsNullOrEmpty(accessToken))
-				{
-					context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-					await context.Response.WriteAsync("Access token is missing.");
-					return;
-				}
+                    var userId = context.Request.Headers["UserId"].ToString();
 
-				var tokenHandler = new JwtSecurityTokenHandler();
+                    var user = adminRepository.GetAll(false).Where(x => x.Id == userId).FirstOrDefault();
 
-				var jwtToken = tokenHandler.ReadJwtToken(accessToken);
+                    if (user == null)
+                    {
+                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                        await context.Response.WriteAsync("User is not authorized.");
+                        return;
+                    }
 
-				var roleClaim = jwtToken.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Role);
+                    await _next(context);
 
-				if (roleClaim != null)
-				{
+                }
 
-					var userRole = roleClaim.Value;
+            }
+            catch (Exception ex)
+            {
+                context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                await context.Response.WriteAsync("An unexpected error occurred. Please try again later.");
+            }
 
-
-					if (userRole == "Admin")
-					{
-
-						await _next(context);
-					}
-					else
-					{
-						context.Response.StatusCode = StatusCodes.Status403Forbidden;
-						await context.Response.WriteAsync("You do not have permission.");
-					}
-				}
-				else
-				{
-					context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-					await context.Response.WriteAsync("Role not found in token.");
-				}
-
-			}
-			catch (Exception ex)
-			{
-				context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-				await context.Response.WriteAsync($"Error validating token: {ex.Message}");
-			}
-
-		}
+        }
 
 
-
-	}
+    }
 }

@@ -35,10 +35,10 @@
 
 
         .table thead tr th {
-            background-color: #222b3c;
+            background-color: #ececec;
             font-size: 13px;
             font-weight: 600;
-            color: white;
+            color: black;
             text-align: left;
             padding: 12px;
             border-bottom: 2px solid #dee2e6;
@@ -118,26 +118,6 @@
         cursor: pointer;
     }
 
-
-.btn-isactive {
-    display: inline-block;
-    padding: 6px 16px;
-    background-color: #e7f8fc;
-    color: #0c5f7e;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-    border: none;
-}
-
-    .btn-isactive:hover {
-        background-color: #6dd4eb;
-        color: #ffffff;
-        cursor: pointer;
-    }
-
 .btn-edit {
     display: inline-block;
     padding: 6px 16px;
@@ -185,5 +165,47 @@
 
     .search-bar input {
         width: 100%;
+    }
+}
+
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    white-space: normal;
+    z-index: 10;
+    font-size: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (min-width: 1920px) {
+    .table-container {
+        height: 780px;
+        padding: 16px;
+    }
+
+    .table-wrapper {
+        height: 740px;
+    }
+
+    .table thead tr th {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .table tbody tr td {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .btn-delete,
+    .btn-edit {
+        font-size: 12px;
+        padding: 8px 18px;
     }
 }

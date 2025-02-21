@@ -21,10 +21,6 @@ namespace DbScimplyAPI.Domain.Entities.User
         public string Version { get; set; }
         public string Location { get; set; }
 
-        // Token
-        public string? RefreshToken { get; set; }
-        DateTime? RefreshTokenEndDate { get; set; }
-
         // relational
         public string SchemaId { get; set; }
         public Schema Schema { get; set; }

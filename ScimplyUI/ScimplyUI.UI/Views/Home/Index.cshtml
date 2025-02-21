@@ -1,0 +1,165 @@
+﻿@model ScimplyUI.UI.Models.User.UserViewModel
+
+@{
+	Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+	<link href="~/css/index/indexstyle.css" rel="stylesheet" />
+	<link href="~/css/index/table.css" rel="stylesheet" />
+	<link href="~/css/index/updateusermodal.css" rel="stylesheet" />
+	<link href="~/css/index/createusermoadal.css" rel="stylesheet" />
+</head>
+<body>
+
+
+	@* NAV *@
+	<div class="top-box">
+		<div class="logo">
+			<div class="logo-circle">
+				<span class="circle circle-1"></span>
+				<span class="circle circle-2"></span>
+			</div>
+			<h3>Scimply</h3>
+		</div>
+		<div class="top-search">
+			<input class="top-search-input" type="type" name="name" placeholder="Search By Username..." />
+		</div>
+		<img src="~/assets/ic_add_user.png" class="user-image-circle" id="btn-add-user" data-toggle="modal" data-target="#createUserModal" />
+	</div>
+
+	<div id="message-container" class="position-fixed top-0 end-0 p-4 mt-5" style="z-index: 1050;">
+		<div id="success-message" class="alert alert-success d-none" role="alert">
+		</div>
+		<div id="error-message" class="alert alert-danger d-none" role="alert">
+		</div>
+	</div>
+
+
+	@* TABLE *@
+	<div class="table-box">
+		<div class="table-container">
+
+			<div class="table-wrapper">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>•</th>
+							<th>ID</th>
+							<th>ResourceType</th>
+							<th>Username</th>
+							<th>Created</th>
+							<th>LastModified</th>
+							<th>Version</th>
+							<th>Location</th>
+							<th>Edit</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody id="tableBody">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+	@* CREATE MODAL *@
+	<div id="createModal" class="modal create-modal" style="display: none;">
+		<div class="modal-content-create">
+			<h2>Create User</h2>
+			<form id="createUserForm">
+				<div>
+					<label for="inputSchemasDropdown">Schemas</label>
+					<select id="inputSchemasDropdown" class="schemas-dropdown" required>
+						<option value="urn:ietf:params:scim:schemas:core:2.0:User">
+							urn:ietf:params:scim:schemas:core:2.0:User
+						</option>
+						<option value="urn:ietf:params:scim:schemas:extension:enterprise:2.0:User">
+							urn:ietf:params:scim:schemas:extension:enterprise:2.0:User
+						</option>
+					</select>
+				</div>
+				<div class="form-grid">
+					<div>
+						<label for="inputUsername">Username</label>
+						<input type="text" id="inputUsername" placeholder="Username" required>
+					</div>
+					<div>
+						<label for="inputResourceType">Resource Type</label>
+						<input type="text" id="inputResourceType" placeholder="Resource Type" required>
+					</div>
+					<div>
+						<label for="inputVersion">Version</label>
+						<input type="text" id="inputVersion" placeholder="W/'version...'" required>
+					</div>
+					<div>
+						<label for="inputPassword">Password</label>
+						<input type="text" id="inputPassword" placeholder="Password" required>
+					</div>
+
+
+				</div>
+				<button type="button" id="createUserBtn">Create</button>
+			</form>
+		</div>
+	</div>
+
+
+	<!--UPDATE MODAL-->
+	<div id="updateModal" class="modal update-modal" style="display: none;">
+		<div class="modal-content-update">
+			<h2>Edit User</h2>
+			<form id="updateForm">
+				<input type="hidden" id="updateId">
+				<div class="input-group">
+					<div class="input-item">
+						<label for="updateUsername">Username:</label>
+						<input asp-for="UserName" type="text" id="updateUsername" required>
+					</div>
+					<div class="input-item">
+						<label for="inputStatusDropdown">Status</label>
+						<select asp-for="Status" id="inputStatusDropdown" class="status-dropdown" required>
+							<option value="true">True</option>
+							<option value="false">False</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<label for="updateResourceType">Resource Type:</label>
+					<input asp-for="ResourceType" type="text" id="updateResourceType">
+				</div>
+				<div>
+					<label for="updateVersion">Version:</label>
+					<input asp-for="Version" type="text" id="updateVersion">
+				</div>
+				<div>
+					<label for="updateLocation">Location:</label>
+					<input asp-for="Location" type="text" id="updateLocation">
+				</div>
+				<button type="button" id="updateSubmit">Update</button>
+			</form>
+		</div>
+	</div>
+
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="~/js/index/getallusers.js"></script>
+	<script src="~/js/index/createuser.js"></script>
+	<script src="~/js/index/deleteuser.js"></script>
+	<script src="~/js/index/updateuser.js"></script>
+
+</body>
+</html>
+
+

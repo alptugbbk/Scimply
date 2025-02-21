@@ -18,14 +18,12 @@ namespace DbScimplyAPI.API.Controllers
         }
 
 
-
         [HttpPost("CreateUser")]
         public async Task<ScimCreateUserCommandResponse> CreateUser(ScimCreateUserCommandRequest request)
         {
             var response = await _mediator.Send(request);
             return response;
         }
-
 
 
     }

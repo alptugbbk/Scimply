@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScimplyUI.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4422a22f75ad39973f0f73bdbcd9ec688b07c9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a027f7dd25cef744e7a2bbbce856a003d1a34a13")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScimplyUI.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScimplyUI.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

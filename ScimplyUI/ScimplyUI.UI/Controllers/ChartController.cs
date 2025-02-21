@@ -7,12 +7,13 @@ using System.Net.Http;
 namespace ScimplyUI.UI.Controllers
 {
 
-    [ViewCheckFilter]
+    [SessionCheckFilter]
     public class ChartController : Controller
     {
 
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
+
 
 		public ChartController(HttpClient httpClient, IConfiguration configuration)
 		{
@@ -20,25 +21,28 @@ namespace ScimplyUI.UI.Controllers
 			_configuration = configuration;
 		}
 
+
 		public IActionResult Charts()
         {
             return View();
         }
 
 
-
         [HttpPost]
         public async Task<IActionResult> GetUserCharts()
         {
-			var accessToken = HttpContext.Request.Cookies["AccessToken"];
 
-			var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
+            var userId = HttpContext.Session.GetString("UserId");
+
+            var baseUrl = _configuration["SubmitUrl:DbscimplyAPI"];
 
 			var apiUrl = $"{baseUrl}/api/Admin/GetUserCharts";
 
-			_httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get,apiUrl);
 
-			var response = await _httpClient.GetAsync(apiUrl);
+            httpRequestMessage.Headers.Add("UserId", userId);
+
+            var response = await _httpClient.SendAsync(httpRequestMessage);
 
             if (response.IsSuccessStatusCode)
             {
@@ -46,11 +50,12 @@ namespace ScimplyUI.UI.Controllers
 
                 var usersResponse = JsonConvert.DeserializeObject<AdminUserChartsQueryResponse>(strResponse);
 
-                return Json(new {location = usersResponse.ChartLocationCountResponseDTO, totalUsers = usersResponse.TotalUsers, activeUsers = usersResponse.ActiveUsers, inactiveUsers = usersResponse.InactiveUsers});
+                return Json(new {location = usersResponse.ChartLocationCountResponseDTO, totalUsers = usersResponse.TotalUsers, activeUsers = usersResponse.ActiveUsers, inactiveUsers = usersResponse.InactiveUsers, mostCommonDate = usersResponse.ChartMostCommonDateResponseDTO});
             }
             return Json(new { message = "no response" });
 
         }
+
 
     }
 

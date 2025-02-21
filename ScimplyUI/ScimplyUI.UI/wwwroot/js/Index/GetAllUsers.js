@@ -1,7 +1,7 @@
 ﻿// GET USER
 function loadUserList() {
 	$.ajax({
-		url: '/Admin/GetAllUsers',
+		url: '/Home/GetAllUsers',
 		type: 'POST',
 		dataType: 'json',
 		success: function (data) {
@@ -30,7 +30,6 @@ function loadUserList() {
 														<td>${id}</td>
 														<td>${resourceType}</td>
 														<td class="username-column" data-fulltext="${userName}">${userName}</td>
-														<td data-fulltext="${password}">${password}</td>
 														<td>${created}</td>
 														<td>${lastModified}</td>
 														<td data-fulltext="${version}">${version}</td>
@@ -41,14 +40,14 @@ function loadUserList() {
 					tableBody.append(row);
 				});
 			} else {
-				tableBody.append('<tr><td colspan="10">Kullanıcı bulunamadı.</td></tr>');
+				tableBody.append('<tr><td colspan="10">User not found.</td></tr>');
 			}
 		},
 		error: function (xhr, status, error) {
 			console.error('Veri çekme hatası:', error);
 			var tableBody = $('#tableBody');
 			tableBody.empty();
-			tableBody.append('<tr><td colspan="10">Veri yüklenemedi.</td></tr>');
+			tableBody.append('<tr><td colspan="10">Failed to load data</td></tr>');
 		}
 	});
 

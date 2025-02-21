@@ -10,6 +10,8 @@ namespace DbScimplyAPI.Persistence.Concretes.Cryptographies
 
         private const string _characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         private const int _passwordLenght = 10;
+        private const int _twoFactorLenght = 4;
+
 
         public string GeneratePassword()
         {
@@ -30,7 +32,26 @@ namespace DbScimplyAPI.Persistence.Concretes.Cryptographies
 
 
 
-        public string SHAEncrypt(string password, string id)
+		public string GenerateTwoFactor()
+		{
+
+			var rnd = new Random();
+
+            var code = "";
+
+            for (int i = 0; i < _twoFactorLenght; i++)
+            {
+                var digit = rnd.Next(0, 9);
+                code += digit;
+            }
+
+            return code;
+
+		}
+
+
+
+		public string SHAEncrypt(string password, string id)
         {
 
             var combined = password + id;
